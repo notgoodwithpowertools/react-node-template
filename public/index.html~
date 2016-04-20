@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>React Template</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+    <h1>Jay's Information</h1>
+    <h2>Hello Jay</h2>
+    <p>The quick brown fox<p>
+    </div>
+  </div>
+
+  <!-- insert scripts for jquery, bootstrap -->
+  <script src="js/jquery-2.2.2.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- insert main.js script --> 
+  <!-- <script src="js/main.js"></script> -->
+</body>
+</html>
+
