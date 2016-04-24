@@ -4,9 +4,10 @@
 - create directory structure
 ```
 public
-src/components
 public/js
 public/css
+src
+src/components
 ```
 ## Setting up tools
 Ensure node and npm installed
