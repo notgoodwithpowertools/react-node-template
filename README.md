@@ -48,3 +48,4 @@ ReactDOM.render(<TestComponent title="Test" />, document.getElementById('test1')
 var React = require('react');
 var ReactDOM = require('react-dom');
 ```
+** This is a change in the branch
