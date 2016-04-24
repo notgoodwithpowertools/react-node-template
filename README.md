@@ -1,6 +1,6 @@
-// Creating a React skeleton
+# Creating a React skeleton
 
-<!-- create readme.md
+create readme.md
 create main project directory
 create directory structure
 
@@ -9,11 +9,12 @@ src/components
 public/js
 public/css
 
-Setting up tools
+## Setting up tools
 Ensure node and npm installed
 create package.json file - npm init
-install packages
+### install packages
 npm install --save react react-dom watchify babelify babel-preset-react browserify
+
 Update package.json start to launch watchify and enable build -->
 
 "scripts": {
@@ -21,7 +22,10 @@ Update package.json start to launch watchify and enable build -->
 ...
 }
 
-<!-- Required scripts to download jquery.min.js, bootstrap.min.js
+## Required scripts to download
+- jquery.min.js
+- bootstrap.min.js
+
 Download scripts to src/js
 
 Required css to download boostrap.min.css, bootstrap-theme.min.css
@@ -34,9 +38,7 @@ add scripts for jquery.min.js, bootstrap.min.js, main.js
 add id="componentID" to place where the component should be in the index.html
 
 update main.jsx to test functionality
-import packages -->
 
+## Import packages
 var React = require('react');
 var ReactDOM = require('react-dom');
-
-<!-- Create test component -->
