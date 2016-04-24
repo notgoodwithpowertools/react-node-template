@@ -1,14 +1,13 @@
 # Creating a React skeleton
-
-create readme.md
-create main project directory
-create directory structure
-
+- create README.md
+- create main project directory
+- create directory structure
+```
 public
 src/components
 public/js
 public/css
-
+```
 ## Setting up tools
 Ensure node and npm installed
 create package.json file - npm init
