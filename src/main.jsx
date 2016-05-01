@@ -4,5 +4,7 @@ var Routes = require('./routes.jsx');
 
 //var TestComponent = require('./components/TestComponent.jsx');
 
-//ReactDOM.render(<TestComponent title="Test" />, document.getElementById('test1'));
+//ReactDOM.render(Routes, document.getElementById('test1'));
+
+//Place the React component
 ReactDOM.render(Routes, document.getElementById('main'));

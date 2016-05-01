@@ -2749,19 +2749,32 @@ function useBasename(createHistory) {
 
     var basename = options.basename;
 
-    // Automatically use the value of <base href> in HTML
-    // documents as basename if it's not explicitly given.
-    if (basename == null && _ExecutionEnvironment.canUseDOM) {
-      var base = document.getElementsByTagName('base')[0];
+    var checkedBaseHref = false;
 
-      if (base) {
-        process.env.NODE_ENV !== 'production' ? _warning2['default'](false, 'Automatically setting basename using <base href> is deprecated and will ' + 'be removed in the next major release. The semantics of <base href> are ' + 'subtly different from basename. Please pass the basename explicitly in ' + 'the options to createHistory') : undefined;
-
-        basename = base.getAttribute('href');
+    function checkBaseHref() {
+      if (checkedBaseHref) {
+        return;
       }
+
+      // Automatically use the value of <base href> in HTML
+      // documents as basename if it's not explicitly given.
+      if (basename == null && _ExecutionEnvironment.canUseDOM) {
+        var base = document.getElementsByTagName('base')[0];
+        var baseHref = base && base.getAttribute('href');
+
+        if (baseHref != null) {
+          basename = baseHref;
+
+          process.env.NODE_ENV !== 'production' ? _warning2['default'](false, 'Automatically setting basename using <base href> is deprecated and will ' + 'be removed in the next major release. The semantics of <base href> are ' + 'subtly different from basename. Please pass the basename explicitly in ' + 'the options to createHistory') : undefined;
+        }
+      }
+
+      checkedBaseHref = true;
     }
 
     function addBasename(location) {
+      checkBaseHref();
+
       if (basename && location.basename == null) {
         if (location.pathname.indexOf(basename) === 0) {
           location.pathname = location.pathname.substring(basename.length);
@@ -2777,6 +2790,8 @@ function useBasename(createHistory) {
     }
 
     function prependBasename(location) {
+      checkBaseHref();
+
       if (!basename) return location;
 
       if (typeof location === 'string') location = _PathUtils.parsePath(location);
@@ -24293,6 +24308,8 @@ var Page1 = React.createClass({
 
 });
 
+module.exports = Page1;
+
 },{"react":215}],220:[function(require,module,exports){
 var React = require('react');
 
@@ -24313,6 +24330,8 @@ var Page2 = React.createClass({
 
 });
 
+module.exports = Page2;
+
 },{"react":215}],221:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
@@ -24320,7 +24339,9 @@ var Routes = require('./routes.jsx');
 
 //var TestComponent = require('./components/TestComponent.jsx');
 
-//ReactDOM.render(<TestComponent title="Test" />, document.getElementById('test1'));
+//ReactDOM.render(Routes, document.getElementById('test1'));
+
+//Place the React component
 ReactDOM.render(Routes, document.getElementById('main'));
 
 },{"./routes.jsx":222,"react":215,"react-dom":50}],222:[function(require,module,exports){
@@ -24330,8 +24351,8 @@ var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 
 var Base = require('./components/Base.jsx');
-var Base = require('./components/Page1.jsx');
-var Base = require('./components/Page2.jsx');
+var Page1 = require('./components/Page1.jsx');
+var Page2 = require('./components/Page2.jsx');
 
 var Routes = React.createElement(
   Router,

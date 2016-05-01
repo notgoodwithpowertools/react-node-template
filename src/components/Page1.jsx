@@ -10,3 +10,5 @@ var Page1 = React.createClass({
   }
 
 });
+
+module.exports = Page1;
