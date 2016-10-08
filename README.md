@@ -54,6 +54,7 @@ var ReactDOM = require('react-dom');
 ```
 npm install --save-dev redux-devtools
 npm install --save-dev redux-devtools-log-monitor
+npm install --save-dev redux-devtools-dock-monitor
 ```
 - Create [DevTools.js](https://github.com/gaearon/redux-devtools/blob/master/docs/Walkthrough.md)
 - Import DevTools `import DevTools from './containers/DevTools';`
